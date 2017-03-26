@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "KNCollectionViewCell.h"
 
+#import "KNCollectionViewLineFlowLayout.h"
+
+
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic,strong) NSMutableArray *images;
@@ -47,11 +50,11 @@ static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他�
     
     if (_collectionView == nil) {
 
-        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, 300, 300) collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, self.view.bounds.size.width, 200) collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
-        tmp.collectionViewLayout = [[UICollectionViewFlowLayout alloc]init];
+        tmp.collectionViewLayout = [[KNCollectionViewLineFlowLayout alloc]init];
         [self.view addSubview: _collectionView];
 
     }

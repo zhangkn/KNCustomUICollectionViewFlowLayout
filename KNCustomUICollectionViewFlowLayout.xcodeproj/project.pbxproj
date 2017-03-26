@@ -55,6 +55,7 @@
 		E1D36A9A1E86690B0084B97B /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = E1D36A721E86690B0084B97B /* Contents.json */; };
 		E1D36A9F1E8670690084B97B /* KNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A9D1E8670690084B97B /* KNCollectionViewCell.m */; };
 		E1D36AA01E8670690084B97B /* KNCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D36A9E1E8670690084B97B /* KNCollectionViewCell.xib */; };
+		E1D36AA41E86791D0084B97B /* KNCollectionViewLineFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36AA31E86791D0084B97B /* KNCollectionViewLineFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,8 @@
 		E1D36A9C1E8670690084B97B /* KNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewCell.h; sourceTree = "<group>"; };
 		E1D36A9D1E8670690084B97B /* KNCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCollectionViewCell.m; sourceTree = "<group>"; };
 		E1D36A9E1E8670690084B97B /* KNCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KNCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1D36AA21E86791D0084B97B /* KNCollectionViewLineFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewLineFlowLayout.h; sourceTree = "<group>"; };
+		E1D36AA31E86791D0084B97B /* KNCollectionViewLineFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCollectionViewLineFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,7 @@
 		E1D36A1E1E86687C0084B97B /* KNCustomUICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				E1D36AA11E8678FD0084B97B /* layout */,
 				E1D36A9B1E8670420084B97B /* view */,
 				E1D36A1F1E86687C0084B97B /* Supporting Files */,
 			);
@@ -383,6 +387,15 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		E1D36AA11E8678FD0084B97B /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				E1D36AA21E86791D0084B97B /* KNCollectionViewLineFlowLayout.h */,
+				E1D36AA31E86791D0084B97B /* KNCollectionViewLineFlowLayout.m */,
+			);
+			name = layout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +512,7 @@
 			files = (
 				E1D36A271E86687C0084B97B /* ViewController.m in Sources */,
 				E1D36A9F1E8670690084B97B /* KNCollectionViewCell.m in Sources */,
+				E1D36AA41E86791D0084B97B /* KNCollectionViewLineFlowLayout.m in Sources */,
 				E1D36A241E86687C0084B97B /* AppDelegate.m in Sources */,
 				E1D36A211E86687C0084B97B /* main.m in Sources */,
 			);
