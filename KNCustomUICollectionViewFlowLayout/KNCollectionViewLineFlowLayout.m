@@ -44,6 +44,40 @@ static const  CGFloat KNCollectionViewLineFlowLayoutItemSize = 100;
 }
 
 
+/**
+ 用来设置scroll停止滚动那一刻的位置
+
+ @param proposedContentOffset 预计的位置
+ @param velocity              滚动速度
+
+ @return Returns the point at which to stop scrolling.
+ */
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
+    //实现距离显示框中间最近的item的停留位置
+    //1. 计算显示的矩形框
+    CGRect lastRect;
+    lastRect.origin = proposedContentOffset;
+    lastRect.size = self.collectionView.bounds.size;
+    
+    //2. 取出这个范围内的所有属性item
+   NSArray *collectionViewLayoutAttributes =[self layoutAttributesForElementsInRect:lastRect];
+    //3..确定👄靠近中间的item   即求距离的最小值
+    CGFloat adjustOffSetX = MAXFLOAT;
+    CGFloat centerX = self.collectionView.bounds.size.width*0.5 +proposedContentOffset.x;//屏幕最中间的x
+    for (UICollectionViewLayoutAttributes *obj in collectionViewLayoutAttributes) {
+        CGFloat distance = ABS(centerX- obj.center.x);
+        if (distance < adjustOffSetX) {
+            adjustOffSetX =   obj.center.x- centerX;//以左侧的Item为中心
+        }
+    }
+    
+    CGPoint lastproposedContentOffset ;
+    lastproposedContentOffset.x = proposedContentOffset.x + adjustOffSetX;
+    lastproposedContentOffset.y = proposedContentOffset.y;
+    
+    return  lastproposedContentOffset;
+}
+
 
 #pragma mark - ******** 设置子控件的frame
 // The collection view calls -prepareLayout once at its first layout as the first message to the layout instance.

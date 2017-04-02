@@ -46,6 +46,17 @@
 static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他文件访问，const 防止值被修改
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[KNCollectionViewLineFlowLayout class]]) {
+        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+
+        
+    }else{
+        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
+    }
+}
+
 - (UICollectionView *)collectionView{
     
     if (_collectionView == nil) {
@@ -114,7 +125,15 @@ static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他�
     return self.images.count;
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //改变模型数据，即可改变视图
+    
+    [self.images removeObjectAtIndex:indexPath.item];
+//    [self.collectionView reloadData];
+    [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    
+    
+}
 
 
 
