@@ -11,6 +11,7 @@
 
 #import "KNCollectionViewLineFlowLayout.h"
 #import "KNStackCollectionViewLayout.h"
+#import "KNCircleCollectionViewLayout.h"
 
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -46,15 +47,17 @@
 
 static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他文件访问，const 防止值被修改
 
+#pragma mark - ********  切换setCollectionViewLayout
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     if ([self.collectionView.collectionViewLayout isKindOfClass:[KNStackCollectionViewLayout class]]) {
-        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+//        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
+//        [self.collectionView setCollectionViewLayout:[[KNCircleCollectionViewLayout alloc]init] animated:YES];
 
         
     }else{
-//        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
         [self.collectionView setCollectionViewLayout:[[KNStackCollectionViewLayout alloc]init] animated:YES];
 
     }

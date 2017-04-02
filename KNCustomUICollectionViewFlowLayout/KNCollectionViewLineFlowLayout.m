@@ -163,8 +163,18 @@ static const  CGFloat KNCollectionViewLineFlowLayoutItemSize = 100;
 //            
 //        }
         //2.  差距越大缩放比例越小 即scale 越接近于1
-        CGFloat  scale =  1+ 1 - ABS(centerX - obj.center.x)/(self.collectionView.frame.size.width*0.5);// 保证1 - ABS(centerX - obj.center.x)/(self.collectionView.frame.size.width*0.5) 小于1
-        obj.transform3D = CATransform3DMakeScale(scale, scale, 1);
+//        CGFloat  scale =  1+ 1 - ABS(centerX - obj.center.x)/(self.collectionView.frame.size.width*0.5);// 保证1 - ABS(centerX - obj.center.x)/(self.collectionView.frame.size.width*0.5) 小于1
+        CGFloat range =  self.collectionView.frame.size.width*0.5 -10;//进行放大的范围
+        
+        CGFloat  scale =  1+ 1 - ABS(centerX - obj.center.x)/(range);// 保证1 - ABS(centerX - obj.center.x)/(self.collectionView.frame.size.width*0.5) 小于1
+        
+        
+        //根据Item的位置，来决定是否进行放大比例
+        //当Item 位于屏幕的边缘时候，不行放大
+        
+//        if(ABS(centerX - obj.center.x)<range){
+            obj.transform3D = CATransform3DMakeScale(scale, scale, 1);// 当超出范围的时候，scale自动计算为1，或者小于1
+//        }
         
         
     }
