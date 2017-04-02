@@ -13,6 +13,8 @@
 #import "KNStackCollectionViewLayout.h"
 #import "KNCircleCollectionViewLayout.h"
 
+#import "KNWaterViewController.h"
+
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -48,7 +50,7 @@
 static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他文件访问，const 防止值被修改
 
 #pragma mark - ********  切换setCollectionViewLayout
-
+#if 0
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     if ([self.collectionView.collectionViewLayout isKindOfClass:[KNStackCollectionViewLayout class]]) {
@@ -62,13 +64,22 @@ static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他�
 
     }
 }
+#endif
+#pragma mark - ********  切换到展示瀑布流的控制器
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self presentViewController:[[KNWaterViewController alloc]init]animated:YES completion:^{
+        
+    }];
+}
 
 
 - (UICollectionView *)collectionView{
     
     if (_collectionView == nil) {
 
-        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, self.view.bounds.size.width, 200) collectionViewLayout:[[KNStackCollectionViewLayout alloc]init]];
+        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:[[KNStackCollectionViewLayout  alloc]init]];
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
@@ -102,8 +113,6 @@ static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他�
     
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellId];
     [self.collectionView registerNib:[UINib nibWithNibName:@"KNCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellId];
-    
-    
     
     
 }
