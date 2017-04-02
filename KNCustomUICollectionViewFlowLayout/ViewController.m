@@ -10,6 +10,7 @@
 #import "KNCollectionViewCell.h"
 
 #import "KNCollectionViewLineFlowLayout.h"
+#import "KNStackCollectionViewLayout.h"
 
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -46,16 +47,19 @@
 static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他文件访问，const 防止值被修改
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    if ([self.collectionView.collectionViewLayout isKindOfClass:[KNCollectionViewLineFlowLayout class]]) {
-        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    
+//    if ([self.collectionView.collectionViewLayout isKindOfClass:[KNStackCollectionViewLayout class]]) {
+//        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+//
+//        
+//    }else{
+////        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
+//        [self.collectionView setCollectionViewLayout:[[KNStackCollectionViewLayout alloc]init] animated:YES];
+//
+//    }
+//}
 
-        
-    }else{
-        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
-    }
-}
 
 - (UICollectionView *)collectionView{
     
@@ -65,7 +69,12 @@ static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他�
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
-        tmp.collectionViewLayout = [[KNCollectionViewLineFlowLayout alloc]init];
+//        tmp.collectionViewLayout = [[KNCollectionViewLineFlowLayout alloc]init];
+        
+        tmp.collectionViewLayout = [[KNStackCollectionViewLayout alloc]init];
+
+        
+        
         [self.view addSubview: _collectionView];
 
     }

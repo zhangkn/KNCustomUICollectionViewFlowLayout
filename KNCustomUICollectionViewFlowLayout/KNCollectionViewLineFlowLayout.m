@@ -10,7 +10,7 @@
 
 @implementation KNCollectionViewLineFlowLayout
 
-static const  CGFloat KNCollectionViewLineFlowLayoutItemSize = 100;  
+static const  CGFloat KNCollectionViewLineFlowLayoutItemSize = 100;
 
 
 

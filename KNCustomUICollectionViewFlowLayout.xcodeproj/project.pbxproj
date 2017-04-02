@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10864F31E90893A00B2AF21 /* KNStackCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E10864F21E90893A00B2AF21 /* KNStackCollectionViewLayout.m */; };
 		E1D36A211E86687C0084B97B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A201E86687C0084B97B /* main.m */; };
 		E1D36A241E86687C0084B97B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A231E86687C0084B97B /* AppDelegate.m */; };
 		E1D36A271E86687C0084B97B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A261E86687C0084B97B /* ViewController.m */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10864F11E90893A00B2AF21 /* KNStackCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNStackCollectionViewLayout.h; sourceTree = "<group>"; };
+		E10864F21E90893A00B2AF21 /* KNStackCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNStackCollectionViewLayout.m; sourceTree = "<group>"; };
 		E1D36A1C1E86687C0084B97B /* KNCustomUICollectionViewFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNCustomUICollectionViewFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D36A201E86687C0084B97B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1D36A221E86687C0084B97B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 			children = (
 				E1D36AA21E86791D0084B97B /* KNCollectionViewLineFlowLayout.h */,
 				E1D36AA31E86791D0084B97B /* KNCollectionViewLineFlowLayout.m */,
+				E10864F11E90893A00B2AF21 /* KNStackCollectionViewLayout.h */,
+				E10864F21E90893A00B2AF21 /* KNStackCollectionViewLayout.m */,
 			);
 			name = layout;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				E1D36A9F1E8670690084B97B /* KNCollectionViewCell.m in Sources */,
 				E1D36AA41E86791D0084B97B /* KNCollectionViewLineFlowLayout.m in Sources */,
 				E1D36A241E86687C0084B97B /* AppDelegate.m in Sources */,
+				E10864F31E90893A00B2AF21 /* KNStackCollectionViewLayout.m in Sources */,
 				E1D36A211E86687C0084B97B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +677,7 @@
 				E1D36A351E86687C0084B97B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
