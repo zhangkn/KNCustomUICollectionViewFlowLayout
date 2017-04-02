@@ -50,6 +50,7 @@
 		E10865721E90AD6200B2AF21 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E108654F1E90AD6200B2AF21 /* UIView+WebCacheOperation.m */; };
 		E10865741E90AD6F00B2AF21 /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = E10865731E90AD6F00B2AF21 /* 1.plist */; };
 		E10865781E90AD9500B2AF21 /* HMShop.m in Sources */ = {isa = PBXBuildFile; fileRef = E10865771E90AD9500B2AF21 /* HMShop.m */; };
+		E108657A1E90B63D00B2AF21 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E10865791E90B63D00B2AF21 /* loading.png */; };
 		E1D36A211E86687C0084B97B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A201E86687C0084B97B /* main.m */; };
 		E1D36A241E86687C0084B97B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A231E86687C0084B97B /* AppDelegate.m */; };
 		E1D36A271E86687C0084B97B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D36A261E86687C0084B97B /* ViewController.m */; };
@@ -188,6 +189,7 @@
 		E10865731E90AD6F00B2AF21 /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		E10865761E90AD9500B2AF21 /* HMShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMShop.h; sourceTree = "<group>"; };
 		E10865771E90AD9500B2AF21 /* HMShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMShop.m; sourceTree = "<group>"; };
+		E10865791E90B63D00B2AF21 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		E1D36A1C1E86687C0084B97B /* KNCustomUICollectionViewFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNCustomUICollectionViewFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D36A201E86687C0084B97B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1D36A221E86687C0084B97B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -368,6 +370,35 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		E108657C1E90B6A600B2AF21 /* Whater */ = {
+			isa = PBXGroup;
+			children = (
+				E108657E1E90B6E800B2AF21 /* VC  */,
+				E10865751E90AD8C00B2AF21 /* Model */,
+				E108657D1E90B6C800B2AF21 /* VIew */,
+			);
+			name = Whater;
+			sourceTree = "<group>";
+		};
+		E108657D1E90B6C800B2AF21 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				E10864FF1E90AB7F00B2AF21 /* KNShopCollectionViewCell.h */,
+				E10865001E90AB7F00B2AF21 /* KNShopCollectionViewCell.m */,
+				E10865011E90AB7F00B2AF21 /* KNShopCollectionViewCell.xib */,
+			);
+			name = VIew;
+			sourceTree = "<group>";
+		};
+		E108657E1E90B6E800B2AF21 /* VC  */ = {
+			isa = PBXGroup;
+			children = (
+				E10864FA1E90A9AB00B2AF21 /* KNWaterViewController.h */,
+				E10864FB1E90A9AB00B2AF21 /* KNWaterViewController.m */,
+			);
+			name = "VC ";
+			sourceTree = "<group>";
+		};
 		E1D36A131E86687C0084B97B = {
 			isa = PBXGroup;
 			children = (
@@ -387,7 +418,7 @@
 		E1D36A1E1E86687C0084B97B /* KNCustomUICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				E10865751E90AD8C00B2AF21 /* Model */,
+				E108657C1E90B6A600B2AF21 /* Whater */,
 				E10865041E90AD6200B2AF21 /* Lib */,
 				E1D36AA11E8678FD0084B97B /* layout */,
 				E1D36A9B1E8670420084B97B /* view */,
@@ -403,8 +434,6 @@
 				E1D36A231E86687C0084B97B /* AppDelegate.m */,
 				E1D36A251E86687C0084B97B /* ViewController.h */,
 				E1D36A261E86687C0084B97B /* ViewController.m */,
-				E10864FA1E90A9AB00B2AF21 /* KNWaterViewController.h */,
-				E10864FB1E90A9AB00B2AF21 /* KNWaterViewController.m */,
 				E1D36A281E86687C0084B97B /* Main.storyboard */,
 				E1D36A2B1E86687C0084B97B /* Assets.xcassets */,
 				E1D36A361E86690A0084B97B /* photos */,
@@ -446,6 +475,7 @@
 		E1D36A371E86690A0084B97B /* 1.imageset */ = {
 			isa = PBXGroup;
 			children = (
+				E10865791E90B63D00B2AF21 /* loading.png */,
 				E1D36A381E86690A0084B97B /* 1.jpg */,
 				E1D36A391E86690A0084B97B /* Contents.json */,
 			);
@@ -627,9 +657,6 @@
 			isa = PBXGroup;
 			children = (
 				E1D36A9C1E8670690084B97B /* KNCollectionViewCell.h */,
-				E10864FF1E90AB7F00B2AF21 /* KNShopCollectionViewCell.h */,
-				E10865001E90AB7F00B2AF21 /* KNShopCollectionViewCell.m */,
-				E10865011E90AB7F00B2AF21 /* KNShopCollectionViewCell.xib */,
 				E1D36A9D1E8670690084B97B /* KNCollectionViewCell.m */,
 				E1D36A9E1E8670690084B97B /* KNCollectionViewCell.xib */,
 			);
@@ -723,6 +750,7 @@
 				E1D36A2F1E86687C0084B97B /* LaunchScreen.storyboard in Resources */,
 				E1D36A881E86690B0084B97B /* Contents.json in Resources */,
 				E1D36A831E86690B0084B97B /* 17.jpg in Resources */,
+				E108657A1E90B63D00B2AF21 /* loading.png in Resources */,
 				E1D36A991E86690B0084B97B /* 9.jpg in Resources */,
 				E1D36A8F1E86690B0084B97B /* 4.jpg in Resources */,
 				E1D36A8B1E86690B0084B97B /* 20.jpg in Resources */,

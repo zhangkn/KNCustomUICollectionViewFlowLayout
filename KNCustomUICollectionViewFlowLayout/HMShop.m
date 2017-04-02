@@ -14,4 +14,8 @@
 
 }
 
+- (CGFloat)heightForItemWidth:(CGFloat)width{
+    return (self.h/self.w)*width;
+}
+
 @end

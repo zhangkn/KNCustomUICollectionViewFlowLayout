@@ -15,4 +15,6 @@
 
 
 + (NSMutableArray*)shops;
+
+- (CGFloat)heightForItemWidth:(CGFloat)width;
 @end

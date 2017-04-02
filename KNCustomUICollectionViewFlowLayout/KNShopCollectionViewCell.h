@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMShop.h"
 
 @interface KNShopCollectionViewCell : UICollectionViewCell
+
+
+@property (nonatomic,strong) HMShop *shop;
+
+
+
 
 @end

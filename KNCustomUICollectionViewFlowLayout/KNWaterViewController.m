@@ -10,7 +10,7 @@
 #import "KNWaterFlowLayout.h"
 #import "KNShopCollectionViewCell.h"
 #import "HMShop.h"
-@interface KNWaterViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface KNWaterViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,KNWaterFlowLayoutDelegate>
 
 @property (nonatomic,strong) NSMutableArray *shops;
 
@@ -26,11 +26,22 @@ static NSString *const cellId = @"KNShopCollectionViewCell";//static   防止其
 
 
 
+#pragma mark - ******** UICollectionViewDataSource
+
+- (CGFloat)waterFlowLayout:(KNWaterFlowLayout *)waterFlowLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath   ForItemWidth:(CGFloat)width{
+    return [self.shops[indexPath.item] heightForItemWidth:width];
+}
+
+
+
 - (UICollectionView *)collectionView{
     
     if (_collectionView == nil) {
         
-        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:[[KNWaterFlowLayout  alloc]init]];
+        KNWaterFlowLayout *waterFlowLayout =[[KNWaterFlowLayout  alloc]init];
+        waterFlowLayout.delegate =self;
+        
+        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: self.view.bounds collectionViewLayout:waterFlowLayout];
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
@@ -64,6 +75,9 @@ static NSString *const cellId = @"KNShopCollectionViewCell";//static   防止其
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    CGRect frame = self.view.frame;
+//    frame.origin.y =20;
+//    self.view.frame = frame;
     // Do any additional setup after loading the view, typically from a nib.
     
     //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellId];
@@ -85,7 +99,7 @@ static NSString *const cellId = @"KNShopCollectionViewCell";//static   防止其
         //此处永远不会进来
     }
     //模型数据的设置
-//    cell.imageName = self.images[indexPath.row];
+    cell.shop = self.shops[indexPath.row];
     
     //    cell.backgroundColor = [UIColor redColor];
     
