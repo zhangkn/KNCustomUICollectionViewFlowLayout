@@ -47,31 +47,31 @@
 static NSString *const cellId = @"KNCollectionViewCell";//static   防止其他文件访问，const 防止值被修改
 
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    
-//    if ([self.collectionView.collectionViewLayout isKindOfClass:[KNStackCollectionViewLayout class]]) {
-//        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
-//
-//        
-//    }else{
-////        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
-//        [self.collectionView setCollectionViewLayout:[[KNStackCollectionViewLayout alloc]init] animated:YES];
-//
-//    }
-//}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[KNStackCollectionViewLayout class]]) {
+        [self.collectionView setCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init] animated:YES];
+
+        
+    }else{
+//        [self.collectionView setCollectionViewLayout:[[KNCollectionViewLineFlowLayout alloc]init] animated:YES];
+        [self.collectionView setCollectionViewLayout:[[KNStackCollectionViewLayout alloc]init] animated:YES];
+
+    }
+}
 
 
 - (UICollectionView *)collectionView{
     
     if (_collectionView == nil) {
 
-        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, self.view.bounds.size.width, 200) collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
+        UICollectionView *tmp = [[UICollectionView alloc]initWithFrame: CGRectMake(0, 100, self.view.bounds.size.width, 200) collectionViewLayout:[[KNStackCollectionViewLayout alloc]init]];
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
 //        tmp.collectionViewLayout = [[KNCollectionViewLineFlowLayout alloc]init];
         
-        tmp.collectionViewLayout = [[KNStackCollectionViewLayout alloc]init];
+//        tmp.collectionViewLayout = [[KNStackCollectionViewLayout alloc]init];
 
         
         
