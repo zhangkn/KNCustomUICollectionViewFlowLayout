@@ -10,6 +10,7 @@
 #import "KNWaterFlowLayout.h"
 #import "KNShopCollectionViewCell.h"
 #import "HMShop.h"
+#import "MJRefresh.h"
 @interface KNWaterViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,KNWaterFlowLayoutDelegate>
 
 @property (nonatomic,strong) NSMutableArray *shops;
@@ -45,6 +46,7 @@ static NSString *const cellId = @"KNShopCollectionViewCell";//static   防止其
         _collectionView =tmp;
         tmp.delegate = self;
         tmp.dataSource = self;
+        tmp.backgroundColor = [UIColor whiteColor];
         //        tmp.collectionViewLayout = [[KNCollectionViewLineFlowLayout alloc]init];
         
         //        tmp.collectionViewLayout = [[KNStackCollectionViewLayout alloc]init];
@@ -82,7 +84,17 @@ static NSString *const cellId = @"KNShopCollectionViewCell";//static   防止其
     
     //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellId];
     [self.collectionView registerNib:[UINib nibWithNibName:@"KNShopCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellId];
+    [self.collectionView addFooterWithCallback:^{
+        
+        //加载更多的数据
+        [self.shops addObjectsFromArray:[HMShop shops]];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            [self.collectionView footerEndRefreshing];
+        });
+        
     
+    }];
     
 }
 

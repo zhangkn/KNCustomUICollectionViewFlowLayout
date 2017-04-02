@@ -64,7 +64,7 @@
 - (void) setupmaxYDicWithcolumnCount:(CGFloat) columnCount{
     
     for (int i = 0; i<columnCount; i++) {
-        [self.maxYDic setObject:[NSNumber numberWithFloat:20.0] forKey:[NSString stringWithFormat:@"%d",i ]];
+        [self.maxYDic setObject:[NSNumber numberWithFloat:self.sectionInset.top] forKey:[NSString stringWithFormat:@"%d",i ]];
     }
 
     
